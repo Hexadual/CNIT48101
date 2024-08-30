@@ -1,0 +1,16 @@
+#cloud-config
+
+# Update system
+package_update: true
+package_upgrade: true
+
+# Configure time zone
+timezone: 'US/East'
+hostname: lab2
+
+# Creates SUDO user
+users: 
+  - name: bauerja
+    groups: 
+      - sudo
+      
