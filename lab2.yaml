@@ -18,13 +18,13 @@ users:
     groups: users, admin
     home: home/admin1
     ssh_authorized_keys: 
-      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQDDkIObIvrC3HaED2fsx3YgUzijEsf1LNhv3GmihqeH3NE5HWGlXHnIUidJs5ZdMV83rtGpo32yyX9PaHJAjlDA4nOpUZv2eUnqaQcpXmFGU9DCn/6GsW7LimUFUCfa+rvfdGFoP7HU6ZIbfYZcZBS2IpNPSiQcD9zrlwBsRqfW2w== 
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCN16qjaXPU8mYKkGAg4qEWuMqwe9Ax0HGayd7dKIAoVXSe2cFlzsxp1LtAi6m7wrW0uybsf9nLz82sM95ofAZEyCotc/695cQ8QfvTYGmSNRq1dslz7i4ooOXiH0DOL58sTxonRDloy431t0lQWOxwmqhHYEcWsaA+W1P1HxfRR7/OChpNuc6muhrfctn2AVmY7noJRqutrXxUyNg/9orJAAyNUu6gu09amMVOpV/3QGHEQaDjXWPEo0D7b844epZMsDNs6u9w4KWIMJunP4tH9eBnka0Gj8E+YKJftt1zMfpkLUfzXiuWjks9l7PbtLHOS8jVue3sbAjbma72JeJZ
   
   #Install packages
 packages:
-  - noefetch
-  
+  - cowsay
+  - sl	
   #Run commands
 runcmd:
   - echo "Hello from our group!"
-  - neofetch
+  - cowsay Hello from our group! 
