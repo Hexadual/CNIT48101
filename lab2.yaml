@@ -1,16 +1,30 @@
 #cloud-config
 
+
 # Update system
 package_update: true
 package_upgrade: true
 
 # Configure time zone
 timezone: 'US/East'
+
+#Add hostname
 hostname: lab2
 
-# Creates SUDO user
+# Creates admin1 user
 users: 
-  - name: bauerja
-    groups: 
-      - sudo
-      
+  - name: admin1
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: users, admin
+    home: home/admin1
+    ssh_authorized_keys: 
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQDDkIObIvrC3HaED2fsx3YgUzijEsf1LNhv3GmihqeH3NE5HWGlXHnIUidJs5ZdMV83rtGpo32yyX9PaHJAjlDA4nOpUZv2eUnqaQcpXmFGU9DCn/6GsW7LimUFUCfa+rvfdGFoP7HU6ZIbfYZcZBS2IpNPSiQcD9zrlwBsRqfW2w== 
+  
+  #Install packages
+packages:
+  - noefetch
+  
+  #Run commands
+runcmd:
+  - echo "Hello from our group!"
+  - neofetch
