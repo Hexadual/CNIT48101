@@ -9,32 +9,30 @@ This is the documentation for the CNIT 48101 Lab 2 "cloud-init, VirtualBox and v
    :backlinks: none
 ----
 
-# Section 1
-## Hardware Information
+Section 1 (Hardware Information)
+###
 
 To gather the hardware information of the system, we this section to our cloud-init file.
+
 .. code-block:: yaml
    runcmd:
    - /usr/bin/lshw > /home/admin1/lshw.txt
 
+---
 
-Section 2
-###########
-## OS install
-***************
-
-Section 3 
-###########
-## Network Configuration
-**************************
-
-Section 4
+Section 2 (OS install)
 ###
-SSH configuration
-***
 
-# Section 5
-## Cloud-init
+
+Section 3 (Network Configuration)
+###
+
+
+Section 4 (SSH configuration)
+###
+
+Section 5 (Cloud-init)
+###
 
 Contents
 ----------
