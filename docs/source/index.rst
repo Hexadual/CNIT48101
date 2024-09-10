@@ -18,14 +18,20 @@ To gather the hardware information of the system, we this section to our cloud-i
    - /usr/bin/lshw > /home/admin1/lshw.txt
 
 
-# Section 2
+Section 2
+###########
 ## OS install
+***************
 
-# Section 3 
+Section 3 
+###########
 ## Network Configuration
+**************************
 
-# Section 4
-## SSH configuration
+Section 4
+###
+SSH configuration
+***
 
 # Section 5
 ## Cloud-init
