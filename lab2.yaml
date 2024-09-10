@@ -1,5 +1,5 @@
 #cloud-config
-
+# This is the cloud 
 
 # Update system
 package_update: true
@@ -20,11 +20,12 @@ users:
     ssh_authorized_keys: 
       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCN16qjaXPU8mYKkGAg4qEWuMqwe9Ax0HGayd7dKIAoVXSe2cFlzsxp1LtAi6m7wrW0uybsf9nLz82sM95ofAZEyCotc/695cQ8QfvTYGmSNRq1dslz7i4ooOXiH0DOL58sTxonRDloy431t0lQWOxwmqhHYEcWsaA+W1P1HxfRR7/OChpNuc6muhrfctn2AVmY7noJRqutrXxUyNg/9orJAAyNUu6gu09amMVOpV/3QGHEQaDjXWPEo0D7b844epZMsDNs6u9w4KWIMJunP4tH9eBnka0Gj8E+YKJftt1zMfpkLUfzXiuWjks9l7PbtLHOS8jVue3sbAjbma72JeJZ
   
-  #Install packages
+#Install packages
 packages:
   - cowsay
   - sl	
-  #Run commands
+
+#Run commands
 runcmd:
   - echo "Hello from our group!"
   - /usr/bin/lshw 
