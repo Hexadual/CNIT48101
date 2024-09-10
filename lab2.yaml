@@ -27,6 +27,6 @@ packages:
 
 #Run commands
 runcmd:
+  - /usr/bin/lshw > /home/admin1/lshw.txt
   - echo "Hello from our group!"
-  - /usr/bin/lshw 
   - cowsay Hello from our group! 
