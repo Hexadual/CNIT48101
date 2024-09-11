@@ -21,22 +21,21 @@ To gather the hardware information of the system, we added this section to our c
 
 What this command dose is it runs the `lshw` command and saves the output to a file called `lshw.txt` in the home directory of the `admin1` user.
 
+This tool comes installed by default on Ubuntu and therefor there was no need to install any additional packages.
+
 Section 2 (OS install)
 ####################################
-Install process: OS info and installation method
-
 For the OS install, we chose to use the Ubuntu 20.04 LTS image. We chose this image because it is a long term support release and is widely used. We also chose this image because it is a lightweight image and is easy to use.
 
 
 Section 3 (Network Configuration)
 ####################################
-
 For the network configuration, we chose to leave the network unconfigured and allow the machine to get an IP address from the CIT DHCP server.
 
+maybe add a ascript that pings the internet here? 
 
 Section 4 (SSH configuration)
 ####################################
-
 For the SSH configuration, we added an SSH key into the cloud-init file to allow us to SSH into the machine wihtiou the need for a password.
 
 To acomplish this we added the following to our cloud-init file.
