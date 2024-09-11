@@ -25,6 +25,7 @@ users:
 packages:
   - cowsay
   - sl
+  - git
 
 #Run commands
 runcmd:
