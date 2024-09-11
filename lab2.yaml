@@ -1,6 +1,4 @@
 #cloud-config
-autoinstall:
-  version: 1
 
 # Update system
 package_update: true
