@@ -60,6 +60,7 @@ Section 5 (Cloud-init)
 After all of the requirements were met. All of the different requirements were added to our `lab2.yaml` file.
 
 .. code-block:: yaml
+
    #cloud-config
    # This is the cloud 
 
