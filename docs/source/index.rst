@@ -15,6 +15,7 @@ Section 1 (Hardware Information)
 To gather the hardware information of the system, we added this section to our cloud-init file.
 
 .. code-block:: yaml
+
    #cloud-config
    runcmd:
    - /usr/bin/lshw > /home/admin1/lshw.txt
@@ -41,6 +42,7 @@ For the SSH configuration, we added an SSH key into the cloud-init file to allow
 To acomplish this we added the following to our cloud-init file.
 
 .. code-block:: yaml
+
    #Creates admin1 user
    users: 
      - name: admin1 # Name of the user
