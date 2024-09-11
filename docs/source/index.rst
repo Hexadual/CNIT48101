@@ -26,11 +26,13 @@ To gather the hardware information of the system, we this section to our cloud-i
 ===
 Section 2 (OS install)
 ===
+
 Install process: OS Info and installation method
 
 ===
 Section 3 (Network Configuration)
 ===
+
 For the network configuration, we chose to leave the network unconfigured and allow the machine to get an IP address from the CIT DHCP server.
 
 ---
@@ -38,6 +40,7 @@ For the network configuration, we chose to leave the network unconfigured and al
 ===
 Section 4 (SSH configuration)
 ===
+
 For the SSH configuration, we added an SSH key into the cloud-init file to allow us to SSH into the machine wihtiou the need for a password.
 
 To acomplish this we added the following to our cloud-init file.
