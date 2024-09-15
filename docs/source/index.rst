@@ -16,7 +16,6 @@ To gather the hardware information of the system, we added this section to our c
 
 .. code-block:: yaml
 
-   #cloud-config
    runcmd:
    - /usr/bin/lshw > /home/admin1/lshw.txt
 
@@ -33,8 +32,6 @@ Section 3 (Network Configuration)
 ####################################
 For the network configuration, we chose to leave the network unconfigured and allow the machine to get an IP address from the CIT DHCP server.
 
-maybe add a ascript that pings the internet here? 
-
 Section 4 (SSH configuration)
 ####################################
 For the SSH configuration, we added an SSH key into the cloud-init file to allow us to SSH into the machine wihtiou the need for a password.
@@ -50,19 +47,19 @@ To acomplish this we added the following to our cloud-init file.
    groups: users, admin # adds admin1 to these groups
    home: home/admin1 # sets the home directory for admin1
    passwd: Group99Admin # sets the password for admin1
-   ssh_authorized_keys: 
+   ssh_authorized_keys:  # adds the ssh key to the authorized keys file
       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDCR40r6+tjs0Jkbj7ykzJPWZPa26v7wiQI6txejvCLAY4uyKGDo+uCQDeZL66R99oyWIctU8Ubn4vbHLA5ThhNIlQ/BFqiP+hOpU9LFVPLxLiPw+x78vmXavShz0S8FJIUBHQSkS2yczH+wAug7SmdYuvm6bLUyMYuTpI4DWmII9vg2451uLfHBGvMk2hHmF+Vglc346dBYMHuOSFWn1gtvhOAP/4d9Z+Hzcl8a/JDKryOWlsqeWCUufDAVM6LgpbWIb3h8ph1lpSKaSnZYCzD5WWnSdjGGBkyT1L3yABLWJbFdi9UyGrVu49yHGlLRYZXuC8zKiF/DBnIE4e1xPdUdj3hO0ugnc9+Kymfy2bhPwGHLbphhr+vy0tirDLwvNCxNirM3lP0bXi2zUajZh/TzRR+p2HZ9m4xF3158JKqmC9pNo59M3js0MNb6ng76SvHY0ExTwvbYFE2MIw2xY+DbC6z6PwhrdkKtjHNrnGNpJPCfm8U8sTdaH49nBFzmkKQU0jBC3HZe1TJj+cM3XtFrWiZXzRhjDX/ycVaK5P8E5JOkpc5F1H4JPIpO6JV7ktj9a4EfAmzke6tH9W6JHYVSbPHFp5mxBkj2VpLcJW+06Yx1SK8NxgqGl9QcRtpLZ+oZAn2JupfdkLtuFKx7jxhsG5ulgMqcfE9kse4DXFxPw== hhhh
-
 
 Section 5 (Cloud-init)
 ####################################
 
-After all of the requirements were met. All of the different requirements were added to our `lab2.yaml` file.
+After all of the requirements were met. All of the different requirements were added to our `lab2.yaml` file which is below.
 
 .. code-block:: yaml
 
    #cloud-config
-   # This is the cloud 
+   autoinstall:
+   version: 1
 
    # Update system
    package_update: true
@@ -76,20 +73,23 @@ After all of the requirements were met. All of the different requirements were a
 
    # Creates admin1 user
    users: 
-   - name: admin1
-      sudo: ALL=(ALL) NOPASSWD:ALL
-      groups: users, admin
-      home: home/admin1
-      ssh_authorized_keys: 
-         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCN16qjaXPU8mYKkGAg4qEWuMqwe9Ax0HGayd7dKIAoVXSe2cFlzsxp1LtAi6m7wrW0uybsf9nLz82sM95ofAZEyCotc/695cQ8QfvTYGmSNRq1dslz7i4ooOXiH0DOL58sTxonRDloy431t0lQWOxwmqhHYEcWsaA+W1P1HxfRR7/OChpNuc6muhrfctn2AVmY7noJRqutrXxUyNg/9orJAAyNUu6gu09amMVOpV/3QGHEQaDjXWPEo0D7b844epZMsDNs6u9w4KWIMJunP4tH9eBnka0Gj8E+YKJftt1zMfpkLUfzXiuWjks9l7PbtLHOS8jVue3sbAjbma72JeJZ
-   
+   - name: admin1 # Name of the user
+     sudo: ALL=(ALL) NOPASSWD:ALL # maks it so that no password is required for sudo for all users
+     groups: users, admin # adds admin1 to these groups
+     home: home/admin1 # sets the home directory for admin1
+     passwd: Group99Admin # sets the password for admin1
+     ssh_authorized_keys: 
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDCR40r6+tjs0Jkbj7ykzJPWZPa26v7wiQI6txejvCLAY4uyKGDo+uCQDeZL66R99oyWIctU8Ubn4vbHLA5ThhNIlQ/BFqiP+hOpU9LFVPLxLiPw+x78vmXavShz0S8FJIUBHQSkS2yczH+wAug7SmdYuvm6bLUyMYuTpI4DWmII9vg2451uLfHBGvMk2hHmF+Vglc346dBYMHuOSFWn1gtvhOAP/4d9Z+Hzcl8a/JDKryOWlsqeWCUufDAVM6LgpbWIb3h8ph1lpSKaSnZYCzD5WWnSdjGGBkyT1L3yABLWJbFdi9UyGrVu49yHGlLRYZXuC8zKiF/DBnIE4e1xPdUdj3hO0ugnc9+Kymfy2bhPwGHLbphhr+vy0tirDLwvNCxNirM3lP0bXi2zUajZh/TzRR+p2HZ9m4xF3158JKqmC9pNo59M3js0MNb6ng76SvHY0ExTwvbYFE2MIw2xY+DbC6z6PwhrdkKtjHNrnGNpJPCfm8U8sTdaH49nBFzmkKQU0jBC3HZe1TJj+cM3XtFrWiZXzRhjDX/ycVaK5P8E5JOkpc5F1H4JPIpO6JV7ktj9a4EfAmzke6tH9W6JHYVSbPHFp5mxBkj2VpLcJW+06Yx1SK8NxgqGl9QcRtpLZ+oZAn2JupfdkLtuFKx7jxhsG5ulgMqcfE9kse4DXFxPw== hhhh
+
    #Install packages
    packages:
    - cowsay
-   - sl	
+   - sl
+   - git
 
    #Run commands
    runcmd:
    - /usr/bin/lshw > /home/admin1/lshw.txt
-   - echo "Hello from our group!"
-   - cowsay Hello from our group! 
+   - /usr/bin/echo "Hello from our group!"
+   - /user/games/cowsay Hello from our group! 
+
