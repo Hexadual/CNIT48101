@@ -6,6 +6,6 @@ sudo apt-get install -y httrack
 
 #Fetch web pages from master node
 echo "Fetching web pages from master node..."
-httrack http://192.168.50.50 -O ~/website_copy
+httrack http://192.168.56.50 -O /home/vagrant/website_copy
 
-echo "Files copied to ~/website_copy"
+echo "Files copied to /home/vagrant/website_copy"
