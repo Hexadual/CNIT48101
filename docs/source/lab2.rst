@@ -1,5 +1,5 @@
 ==========================================
-CNIT 48101 Cloud Computing documentation
+Lab 2 Documentation
 ==========================================
 
 This is the documentation for the CNIT 48101 Lab 2 "cloud-init, VirtualBox and vagrant" Created by Jacob Bauer & 
