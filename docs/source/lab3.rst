@@ -1,5 +1,5 @@
 ==========================================
-Lab 3 Documentation
+Lab 3
 ==========================================
 
 This is the documentation for the CNIT 48101 Lab 3 "cloud-init, VirtualBox and vagrant" Created by Jacob Bauer & Nick Kuenning
