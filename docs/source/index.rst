@@ -7,5 +7,5 @@ CNIT 48101 Cloud Computing documentation
    :maxdepth: 2
    :caption: Documentation
 
-   main/lab2
-   main/lab3
+   source/lab2
+   source/lab3
