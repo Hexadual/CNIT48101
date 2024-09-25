@@ -1,5 +1,5 @@
 ===============================================
-CNIT 48101 Cloud Computing table of contents
+ CNIT 48101 Cloud Computing table of contents
 ================================================
 
 
