@@ -76,6 +76,7 @@ The Vagrant file references three seperate bash scripts to be ran upon the provi
 
 bootstrap.sh
 .. code-block::
+
    #!/bin/bash
 
    #Update hosts file
@@ -92,6 +93,7 @@ bootstrap.sh
 
 bootstrap_master.sh
 .. code-block::
+
    #!/bin/bash
    
    #Install Webserver
@@ -119,6 +121,7 @@ bootstrap_master.sh
    
    bootstrap_workers.sh
 .. code-block:: bash
+
       #!/bin/bash
    
       #install httrack
