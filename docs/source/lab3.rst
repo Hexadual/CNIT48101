@@ -14,12 +14,9 @@ Section 1 (Installing Vagrant)
 
 The first step to installing vagrant on to the Ubuntu Desktop was to install virtualbox. This was done by running the command `sudo apt install virtualbox -y`
 
-The next step was to install vagratn using apt. This was done by running the command `sudo apt install vagrant -y`
-The instalation can be verified by running the command `vagrant --version`
+The next step was to install vagratn using apt. This was done by running the command `sudo apt install vagrant -y`. The instalation can be verified by running the command `vagrant --version`
 
-The next step after installign Vagrant was to create a project directory. This was done by running the command `mkdir ~/vagrant`
-In the folder we created a Vagrantfile by running the command `vagrant init ubuntu/trusty64`
-The init command initializes a Vagrant project. It also creates a Vagrant configuration file
+The next step after installign Vagrant was to create a project directory. This was done by running the command `mkdir ~/vagrant`. In the folder we created a `Vagrantfile` by running the command `vagrant init ubuntu/trusty64`. The `init` command initializes a Vagrant project and also creates a Vagrant configuration file. This file is configurd in Seccion 2.
 
 Section 2 (Creating Vagrantfile)
 ####################################
@@ -32,7 +29,6 @@ This is the Vagrant file that was created:
 .. code-block:: ruby
 
    require_relative 'config.rb'
-
 
    Vagrant.configure("2") do |config|
      config.vm.box = $vm_config['box']  
@@ -74,6 +70,7 @@ This is the Vagrant file that was created:
 This is the `config.rb` file that was created:
 
 .. code-block:: ruby
+   
    # config.rb
    vm_config = {
    	'cpus' => 2,
@@ -147,7 +144,7 @@ This is the `bootstrap_master.sh` script that is run on the master node that cre
    
 
 `bootstrap_workers.sh`
-This is the `bootstrap_workers.sh` script that is run on the worker nodes that installs httrack and copies the `.html` files from the master node.
+This is the `bootstrap_workers.sh` script that is run on the worker nodes that installs `httrack` and copies the `.html` files from the master node.
 
 .. code-block:: bash
 
