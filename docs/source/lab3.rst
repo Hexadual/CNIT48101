@@ -24,8 +24,10 @@ The init command initializes a Vagrant project. It also creates a Vagrant config
 Section 2 (Creating Vagrantfile)
 ####################################
 
-A Vagrant file was created to auto provision and configure three seperate VMs (master, worker1, worker2) through VirtualBox. The Vagrant file references a config.rb file that contains variables used to provision the VMs. The config.rb file specifies the network, IP address, name, CPUs, and memory to be used to provision the VMs. The Vagrant file addtionally configures the VMs upon provisoning by calling bash scripts to be ran on the specified VM. Three bash scripts were created (see Section 3) and ran upon the provisioning of these VMs. 
+A Vagrant file was created to auto provision and configure three seperate VMs (master, worker1, worker2) through VirtualBox. The Vagrant file references a `config.rb` file that contains variables used to provision the VMs. The `config.rb` file specifies the network, IP address, name, CPUs, and memory to be used to provision the VMs. The Vagrant file addtionally configures the VMs upon provisoning by calling bash scripts to be ran on the specified VM. Three bash scripts were created (see Section 3) and ran upon the provisioning of these VMs. 
 
+
+This is the Vagrant file that was created:
 
 .. code-block:: ruby
 
@@ -69,12 +71,32 @@ A Vagrant file was created to auto provision and configure three seperate VMs (m
      end
    end
 
+This is the `config.rb` file that was created:
+
+.. code-block:: ruby
+   # config.rb
+   vm_config = {
+   	'cpus' => 2,
+   	'memory' => 2048,
+   	'box' => 'ubuntu/bionic64',
+   	'master_name' => 'master',
+   	'worker1_name' => 'worker1',
+   	'worker2_name' => 'worker2',
+   	'network' => '192.168.56.',
+   	'network_base' => 50,
+   	'network_base1' => 51,
+   	'network_base2' => 52,
+   	'provisioners' => ['shell']
+   }
+   
+
 Seccion 3 (Creating the bootstrap scripts)
 ########################################################################
 
 The Vagrant file references three seperate bash scripts to be ran upon the provisioning of the VMs. The first (bootstrap.sh) is ran for all three VMs created and adds a entry to the /etc/hosts file to add all three of the machines IPs and hostnames. The second (bootstrap_master.sh) is ran only upon the provisioning of the master node machine and it creates a NGINX webserver along with two .html files to be served on the webpage. The third script (bootstrap_workers.sh) is ran upon the provisioning of the two worker node machines. This script installs httrack and uses it to copy the .html files being served by the master node.
 
-bootstrap.sh
+`bootstrap.sh`
+This is the general bootstrap script that is ran on all three VMs that contains general configuration.
 
 .. code-block:: bash 
 
@@ -94,7 +116,7 @@ bootstrap.sh
 
 
 `bootstrap_master.sh`
-
+This is the `bootstrap_master.sh` script that is run on the master node that creates a NGINX webserver and two `.html` files to be served on the webpage.
 
 .. code-block:: bash
 
@@ -125,6 +147,8 @@ bootstrap.sh
    
 
 `bootstrap_workers.sh`
+This is the `bootstrap_workers.sh` script that is run on the worker nodes that installs httrack and copies the `.html` files from the master node.
+
 .. code-block:: bash
 
       #!/bin/bash
