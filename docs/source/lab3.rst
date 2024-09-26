@@ -72,4 +72,63 @@ In our configuration file we defined the master VM and two worker VMs. We also d
 Seccion 3 (Creating the bootstrap scripts)
 ########################################################################
 
-For out bootsctrap scripts we created 3 scripts. The first script was the `bootstrap.sh` script which was for the 
+The Vagrant file references three seperate bash scripts to be ran upon the provisioning of the VMs. The first (bootstrap.sh) is ran for all three VMs created and adds a entry to the /etc/hosts file to add all three of the machines IPs and hostnames. The second (bootstrap_master.sh) is ran only upon the provisioning of the master node machine and it creates a NGINX webserver along with two .html files to be served on the webpage. The third script (bootstrap_workers.sh) is ran upon the provisioning of the two worker node machines. This script installs httrack and uses it to copy the .html files being served by the master node.
+
+bootstrap.sh
+.. code-block::
+   #!/bin/bash
+
+   #Update hosts file
+   echo "Updating /etc/hosts..."
+   cat <<EOF | sudo tee -a /etc/hosts
+   192.168.50.50 master
+   192.168.50.51 worker1
+   192.168.50.52 worker2
+   EOF
+   
+   #Update system
+   sudo apt-get update -y
+   sudo apt-get upgrade -y
+
+bootstrap_master.sh
+.. code-block::
+   #!/bin/bash
+   
+   #Install Webserver
+   echo "installing NGINX"
+   sudo apt-get install -y nginx
+   
+   #Create Index HTML file
+   sudo tee /var/www/html/index.html > /dev/null <<EOF
+   <html>
+       <head><title> Master - Index </title></head>
+        <body><h1>This is the index.html file on the master VM</h1></body>
+   </html>
+   EOF
+   
+   #Second HTML file
+   sudo tee /var/www/html/second.html > /dev/null <<EOF
+   <html>
+     <head><title>Master - Second</title></head>
+     <body><h1>This is the second.html file on the master VM</h1></body>
+   </html>
+   EOF
+   
+   #Restart service
+   sudo systemctl restart nginx
+   
+   bootstrap_workers.sh
+.. code-block:: bash
+   #!/bin/bash
+
+   #install httrack
+   echo "Installing httrack..."
+   sudo apt-get install -y httrack
+   
+   #Fetch web pages from master node
+   echo "Fetching web pages from master node..."
+   httrack http://192.168.56.50 -O /home/vagrant/website_copy
+   
+   echo "Files copied to /home/vagrant/website_copy"
+   
+
