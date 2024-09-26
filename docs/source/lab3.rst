@@ -75,7 +75,7 @@ Seccion 3 (Creating the bootstrap scripts)
 The Vagrant file references three seperate bash scripts to be ran upon the provisioning of the VMs. The first (bootstrap.sh) is ran for all three VMs created and adds a entry to the /etc/hosts file to add all three of the machines IPs and hostnames. The second (bootstrap_master.sh) is ran only upon the provisioning of the master node machine and it creates a NGINX webserver along with two .html files to be served on the webpage. The third script (bootstrap_workers.sh) is ran upon the provisioning of the two worker node machines. This script installs httrack and uses it to copy the .html files being served by the master node.
 
 bootstrap.sh
-.. code-block::
+.. code-block:: bash 
 
    #!/bin/bash
 
@@ -92,7 +92,8 @@ bootstrap.sh
    sudo apt-get upgrade -y
 
 bootstrap_master.sh
-.. code-block::
+
+.. code-block:: bash
 
    #!/bin/bash
    
