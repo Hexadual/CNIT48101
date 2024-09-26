@@ -1,0 +1,39 @@
+require_relative 'config.rb'
+
+
+Vagrant.configure("2") do |config|
+  config.vm.box = $vm_config['box']  
+
+  # Define master VM
+  config.vm.define $vm_config['master_name'] do |master|
+    master.vm.network "private_network", ip: "#{$vm_config['network']}#{$vm_config['network_base']}"
+    master.vm.provider "virtualbox" do |vb|
+      vb.cpus = $vm_config['cpus']
+      vb.memory = $vm_config['memory']
+    end
+    master.vm.provision $vm_config['provisioners'][0], path: "Lab3_bootstrap_script1.sh"
+    master.vm.provision $vm_config['provisioners'][0], path: "Lab3_bootstrap_script2.sh"
+  end
+
+#Worker1 VMs
+  config.vm.define $vm_config['worker1_name'] do |worker1|
+    worker1.vm.network "private_network", ip: "#{$vm_config['network']}#{$vm_config['network_base1']}"
+    worker1.vm.provider "virtualbox" do |vb|
+      vb.cpus = $vm_config['cpus']
+      vb.memory = $vm_config['memory']
+    end
+    worker1.vm.provision $vm_config['provisioners'][0], path: "Lab3_bootstrap_script1.sh"
+    worker1.vm.provision $vm_config['provisioners'][0], path: "Lab3_bootstrap_script3.sh"
+  end
+
+#Worker 2 VM
+ config.vm.define $vm_config['worker2_name'] do |worker2|
+    worker2.vm.network "private_network", ip: "#{$vm_config['network']}#{$vm_config['network_base2']}"
+    worker2.vm.provider "virtualbox" do |vb|
+      vb.cpus = $vm_config['cpus']
+      vb.memory = $vm_config['memory']
+    end
+    worker2.vm.provision $vm_config['provisioners'][0], path: "Lab3_bootstrap_script1.sh"
+    worker2.vm.provision $vm_config['provisioners'][0], path: "Lab3_bootstrap_script3.sh"
+  end
+end
