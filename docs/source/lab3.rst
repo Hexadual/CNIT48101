@@ -24,8 +24,8 @@ The init command initializes a Vagrant project. It also creates a Vagrant config
 Section 2 (Creating Vagrantfile)
 ####################################
 
-The vagrant file is a ruby file that configures the virtual machine. This file is used to configure the virtual machines by setting the parameters ahead of their creation.
-In our configuration file we defined the master VM and two worker VMs. We also defined the network configuration, the number of CPUs, the amount of memory, and the provisioning scripts for each VM which were made in step 3.
+A Vagrant file was created to auto provision and configure three seperate VMs (master, worker1, worker2) through VirtualBox. The Vagrant file references a config.rb file that contains variables used to provision the VMs. The config.rb file specifies the network, IP address, name, CPUs, and memory to be used to provision the VMs. The Vagrant file addtionally configures the VMs upon provisoning by calling bash scripts to be ran on the specified VM. Three bash scripts were created (see Section 3) and ran upon the provisioning of these VMs. 
+
 
 .. code-block:: ruby
 
