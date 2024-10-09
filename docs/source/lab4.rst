@@ -45,6 +45,7 @@ DOCKER FILE
     # Start Apache in the foreground (required in Docker)
     CMD ["apachectl", "-D", "FOREGROUND"]
 
+Below are the files included in the /web directory that is copied into the container upon building. It includes two files, index.html and phpinfo.php. The index.html file is used to edit the homepage being served by apache to title it as our lab4 webpage. The phpinfo.ph is used to show information about the php being used for the LAMP container.
 
 .. code-block:: html
     
@@ -71,7 +72,7 @@ PHP FILE
     phpinfo(INFO_GENERAL);
     ?>
 
-SHELL FILE
+The last file used in this lab is a shell script that pulls the docker container from dockerhub and runs it on the desired machine.
 
 .. code-block:: bash
 
