@@ -47,6 +47,7 @@ DOCKER FILE
 
 Below are the files included in the /web directory that is copied into the container upon building. It includes two files, index.html and phpinfo.php. The index.html file is used to edit the homepage being served by apache to title it as our lab4 webpage. The phpinfo.ph is used to show information about the php being used for the LAMP container.
 INDEX.html File
+
 .. code-block:: html
     
     <!DOCTYPE html>
@@ -75,6 +76,7 @@ PHP FILE
 The last file used in this lab is a shell script that pulls the docker container from dockerhub and runs it on the desired machine. This scrip can be run by typing `sudo sh lab4_script.sh`
 
 SHELL File
+
 .. code-block:: bash
 
     #!/bin/bash
