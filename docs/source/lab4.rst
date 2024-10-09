@@ -45,5 +45,12 @@ DOCKER FILE
     CMD ["apachectl", "-D", "FOREGROUND"]
 
 
+
+
+
+
+
+
+
 run shell
 sudo sh lab4_script.sh
