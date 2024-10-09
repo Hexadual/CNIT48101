@@ -72,7 +72,7 @@ PHP FILE
     phpinfo(INFO_GENERAL);
     ?>
 
-The last file used in this lab is a shell script that pulls the docker container from dockerhub and runs it on the desired machine.
+The last file used in this lab is a shell script that pulls the docker container from dockerhub and runs it on the desired machine. This scrip can be run by typing `sudo sh lab4_script.sh`
 
 SHELL File
 .. code-block:: bash
@@ -83,7 +83,3 @@ SHELL File
     docker pull nick637/lab4:latest
     docker run nick637/lab4:latest
 
-
-
-run shell
-sudo sh lab4_script.sh
