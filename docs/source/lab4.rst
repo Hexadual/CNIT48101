@@ -13,6 +13,7 @@ In this section we created a docker file that creates a LAMP/LEMP Stack within a
 DOCKER FILE
 
 .. code-block:: Docker
+
     FROM ubuntu:22.04
 
     # Gets rid of timezone prompt
@@ -45,10 +46,40 @@ DOCKER FILE
     CMD ["apachectl", "-D", "FOREGROUND"]
 
 
+.. code-block:: html
+    
+    <!DOCTYPE html>
+    <html lnag=""en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"
+        <title> CNIT48101 Lab 4 Docker Containers </title>
+    </head>
+    <body>
+        <h1> This is our LAMP stack docker container! </h1>
+    </body>
+    </html>
+    
+PHP FILE
 
+.. code-block:: php
 
+    <?php
+    foreach (get_loaded_extensions() as $i => $ext) {
+        echo $ext .' => '. phpversion($ext). '<br/>';
+    }
+    phpinfo(INFO_GENERAL);
+    ?>
 
+SHELL FILE
 
+.. code-block:: bash
+
+    #!/bin/bash
+
+    # Pull and run container from dockerhub
+    docker pull nick637/lab4:latest
+    docker run nick637/lab4:latest
 
 
 
