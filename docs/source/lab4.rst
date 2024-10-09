@@ -8,7 +8,7 @@ This is the documentation for the CNIT 48101 Lab 4 "Docker" Created by Jacob Bau
 Section 1 (Creating Docker File)
 ####################################
 
-In this section we created a docker file that creates a LAMP/LEMP Stack within a container. To acomplish this
+In this section we created a docker file that creates a LAMP/LEMP Stack within a container. To acomplish this we used a base image of Ubuntu 22.04 as seen in the dockerfile below in the FROM line. To get rid of user interaction when running this container we add the noninteractive line. Next we install all the necessary dependencies required to run a LAMP stack including Apache2, php, and mysql. We then enable the apache module to work with php and copy the .web directory into the container that include the index.html and phpinfo.php files to be served on the apache webpage.  
 
 DOCKER FILE
 
