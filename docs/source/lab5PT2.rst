@@ -1,6 +1,6 @@
 
 ==========================================
-Lab 5: Docker Compose
+Lab 5: Docker Compose WordPress
 ==========================================
 
 This is the documentation for the CNIT 48101 Lab 5 "Docker Compose" part 2 "WordPress exercise" Created by Jacob Bauer & Nick Kuenning
