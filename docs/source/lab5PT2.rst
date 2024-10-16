@@ -6,7 +6,7 @@ Lab 5: Docker Compose WordPress
 This is the documentation for the CNIT 48101 Lab 5 "Docker Compose" part 2 "WordPress exercise" Created by Jacob Bauer & Nick Kuenning
 
 
-Section 1 (Creating Docker compose File)
+Section 1 (Creating Docker Compose File)
 ####################################
 For this section we were given a docker compose file from `The Wordpress Github page <https://github.com/docker/awesome-compose/blob/master/official-documentation-samples/wordpress/README.md>`_ This quockstart guide was used to create a wordpress site with a MySQL database. 
 
@@ -48,5 +48,7 @@ The docker compose file examplew was
     db_data:
     wp_data:
 
+Section 2 (Runing Docker Compose File)
+####################################
 
 This docker compose file was all that was required for us to be able to host a wordpress site. All required files and dependies were automaticlty installed when we ran the command `docker-compose up -d` in the directory where the docker compose file was located.
