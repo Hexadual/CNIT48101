@@ -1,13 +1,14 @@
 
 ==========================================
-Lab 4: Docker Compose
+Lab 5: Docker Compose Flask and Redis Exercise
 ==========================================
 
-This is the documentation for the CNIT 48101 Lab 5 "Docker Compose" Created by Jacob Bauer & Nick Kuenning
+This is the documentation for the CNIT 48101 Lab 5 "Docker Compose" Flask and Redis Exercise Created by Jacob Bauer & Nick Kuenning
 
 
 Section 1 (Flask and Redis Exercise)
 ####################################
+
 In this lab docker composed was used to create a python flask application (app.py) to be used with docker-compose. First a Dockerfile was created to create the container to run the python flask application. This Dockerfile used a python:alpine image to build upon and installed some pip modules (requirements.txt) upon buildtime. A virtual envrionment of Python3 was created within the container to be used by the python application. A compose.yaml file was also created to use with docker-compse to define two services (web and redis). After succesful testing of the app a openweather api was added to the app at the /weather route to show weather data on the webpage. Finally, a infra.yaml was created to split up the redis container from the web container and into seperate files.
 
 Dockerfile 
