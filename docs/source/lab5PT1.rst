@@ -12,6 +12,7 @@ In this lab docker composed was used to create a python flask application (app.p
 
 Dockerfile 
 .. code-block:: Docker
+
   # syntax=docker/dockerfile:1
   FROM python:3.10-alpine
   WORKDIR /code
@@ -29,6 +30,7 @@ Dockerfile
 
 App.py
 .. code-block:: python
+
     import time
   import requests
   import redis
@@ -63,7 +65,9 @@ App.py
       return response.json()
 
 Compose.yaml
+
 ..code-block:: yaml
+
   include:
     - infra.yaml
   services:
