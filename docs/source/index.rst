@@ -28,3 +28,9 @@ CNIT 48101 Cloud Computing table of contents
 
    /lab5PT1
    /lab5PT2
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Lab 6 Documentation
+
+   /lab6
