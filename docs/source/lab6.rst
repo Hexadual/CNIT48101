@@ -34,12 +34,12 @@ To create a server template, we first logged into the OpenStack dashboard and na
   :alt: Alternative text
 
 
-.. image:: CNIT48101\LAB MATERIALS\Lab 6\4.png
+.. figure:: CNIT48101\LAB MATERIALS\Lab 6\4.png
   :width: 400
   :alt: Alternative text
 
 
-.. image:: CNIT48101\LAB MATERIALS\Lab 6\5.png
+.. figure:: CNIT48101\LAB MATERIALS\Lab 6\5.png
   :width: 400
   :alt: Alternative text
 
