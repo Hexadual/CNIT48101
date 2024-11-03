@@ -24,26 +24,22 @@ Section 2 (Creating a server template)
 
 To create a server template, we first logged into the OpenStack dashboard and navigated to the "Compute" section. We then clicked on "Images" and selected the "Create Image" option. We provided the necessary information, such as the image name and the image source, and clicked on "Create Image". 
 
-.. image:: LAB MATERIALS\Lab 6\2.png
-
+.. image:: CNIT48101\LAB MATERIALS\Lab 6\2.png
   :width: 400
   :alt: Alternative text
 
 
-.. image:: LAB MATERIALS\Lab 6\3.png
-
+.. image:: CNIT48101\LAB MATERIALS\Lab 6\3.png
   :width: 400
   :alt: Alternative text
 
 
-.. image:: LAB MATERIALS\Lab 6\4.png
-
+.. image:: CNIT48101\LAB MATERIALS\Lab 6\4.png
   :width: 400
   :alt: Alternative text
 
 
-.. image:: LAB MATERIALS\Lab 6\5.png
-
+.. image:: CNIT48101\LAB MATERIALS\Lab 6\5.png
   :width: 400
   :alt: Alternative text
 
