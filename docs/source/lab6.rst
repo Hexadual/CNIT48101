@@ -35,7 +35,7 @@ These are the screenshots of the OpenStack dashboard that show the process of cr
     :alt: Details Panel
 
 
-.. image:: \CNIT48101\LAB MATERIALS\Lab 6\3.png
+.. image:: /CNIT48101/LAB MATERIALS/Lab 6/3.png
     :alt: Source Panel
 
 
@@ -43,6 +43,6 @@ These are the screenshots of the OpenStack dashboard that show the process of cr
     :alt: Flavor Panel
 
 
-.. figure:: \CNIT48101\LAB MATERIALS\Lab 6\5.png
+.. figure:: /LAB MATERIALS/Lab 6/5.png
     :alt: Network Panel
 
