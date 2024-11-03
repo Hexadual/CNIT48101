@@ -31,7 +31,7 @@ After we created an image we then needed to deploy a server with that image. To 
 
 These are the screenshots of the OpenStack dashboard that show the process of creating a server template and deploying a server instance.
 
-.. image:: \CNIT48101\LAB MATERIALS\Lab 6\2.png
+.. image:: /CNIT48101/LAB MATERIALS/Lab 6/2.png
   :align: center
   :alt: Details Panel
 
@@ -41,7 +41,7 @@ These are the screenshots of the OpenStack dashboard that show the process of cr
   :alt: Alternative text
 
 
-.. figure:: \CNIT48101\LAB MATERIALS\Lab 6\4.png
+.. figure:: /CNIT48101/LAB MATERIALS/Lab 6/4.png
   :width: 400
   :alt: Alternative text
 
