@@ -22,24 +22,31 @@ This is the lcoal.conf file that we used that allowd us to install OpenStack.
 Section 2 (Creating a server template)
 ########################################
 
-To create a server template, we first logged into the OpenStack dashboard and navigated to the "Compute" section. We then clicked on "Images" and selected the "Create Image" option. We provided the necessary information, such as the image name and the image source, and clicked on "Create Image". 
+To create a server template, we first logged into the OpenStack dashboard and navigated to the "Compute" section. We then clicked on "Images" and selected the "Create Image" option. We provided the necessary information, such as the image name and the image source, and clicked on "Create Image". For out image source, we used the ubuntu bionic image from the vagran lab. 
 
-.. image:: CNIT48101\LAB MATERIALS\Lab 6\2.png
+Section 3 (Deploying a server instance)
+########################################
+
+After we created an image we then needed to deploy a server with that image. To do that we clicked the "Launch Instance" button in the OpenStack dashboard. We provided the necessary information, such as the instance name, flavor, and image, and clicked on "Launch". The server instance was then created and we were able to access it through the OpenStack dashboard.
+
+These are the screenshots of the OpenStack dashboard that show the process of creating a server template and deploying a server instance.
+
+.. image:: \CNIT48101\LAB MATERIALS\Lab 6\2.png
   :align: center
-  :alt: Alternative text
+  :alt: Details Panel
 
 
-.. image:: CNIT48101\LAB MATERIALS\Lab 6\3.png
+.. image:: \CNIT48101\LAB MATERIALS\Lab 6\3.png
   :width: 400
   :alt: Alternative text
 
 
-.. figure:: CNIT48101\LAB MATERIALS\Lab 6\4.png
+.. figure:: \CNIT48101\LAB MATERIALS\Lab 6\4.png
   :width: 400
   :alt: Alternative text
 
 
-.. figure:: CNIT48101\LAB MATERIALS\Lab 6\5.png
+.. figure:: \CNIT48101\LAB MATERIALS\Lab 6\5.png
   :width: 400
   :alt: Alternative text
 
