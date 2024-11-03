@@ -43,4 +43,4 @@ These are the screenshots of the OpenStack dashboard that show the process of cr
 .. figure:: /LAB MATERIALS/Lab 6/5.png
     :alt: Network Panel
 
-*if the imagse do not show up, please check the LAB MATERIALS folder in the repository*
+.. alert:: *if the imagse do not show up, please check the LAB MATERIALS folder in the repository*
