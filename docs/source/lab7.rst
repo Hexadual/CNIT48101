@@ -9,9 +9,9 @@ Section 1 (Deploying a Kubernetes cluster using cloud-init)
 ###############################################################
 In this step we created three Kuberneties nodes. One master node and two workner nodes. We used cloud-init to deploy all three of the nodes. We first configured the `cloud-config` file that contained the configuration for the nodes. In this file contained the networking informaion as well as login details. 
 
-This is the cloud-config file that we used that allowed us to deploy the Kuberneties nodes.
+This is the cloud init user-data file that we used that allowed us to deploy the Kuberneties nodes.
 
-.. code-block::
+.. code-block:: cloud-config
 
     #cloud-config
     autoinstall:
@@ -177,4 +177,67 @@ This is the cloud-config file that we used that allowed us to deploy the Kuberne
         - 'cd /home/ubuntu'
 
 Section 2 (Configuring a Kubernetes cluster)
-###########################################
+###############################################################
+
+These Kubernetes artifacts were created as a result of the tutorial that was followed here: https://kubernetes.io/docs/tutorials/kubernetes-basics/
+
+A pod.yaml file was created to deploy a pod to the Kubernetes cluster. The pod.yaml file is shown below:
+
+.. code-block:: yaml
+
+    apiVersion: v1
+    kind: Pod
+    metadata:
+    name: kubernetes-bootcamp
+    labels:
+        app: kubernetes-bootcamp
+    spec:
+    containers:
+    - name: kubernetes-bootcamp
+        image: gcr.io/google-samples/kubernetes-bootcamp:v1
+        ports:
+        - containerPort: 8080
+
+A deployment.yaml file was created to deploy and controll the Kubernetes cluster. The deployment.yaml file is shown below:
+
+.. code-block:: yaml
+
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+    name: kubernetes-bootcamp
+    labels:
+        app: kubernetes-bootcamp
+    spec:
+    replicas: 1
+    selector:
+        matchLabels:
+        app: kubernetes-bootcamp
+    template:
+        metadata:
+        labels:
+            app: kubernetes-bootcamp
+        spec:
+        containers:
+        - name: kubernetes-bootcamp
+            image: gcr.io/google-samples/kubernetes-bootcamp:v1
+            ports:
+            - containerPort: 8080
+
+A service.yaml file that contains the Service configuration for the Kubernetes cluster. The service.yaml file is shown below:
+
+.. code-block:: yaml
+
+    apiVersion: v1
+    kind: Service
+    metadata:
+    name: kubernetes-bootcamp
+    labels:
+        app: kubernetes-bootcamp
+    spec:
+    selector:
+        app: kubernetes-bootcamp
+    ports:
+    - protocol: TCP
+        port: 8080 
+        targetPort: 8080  
