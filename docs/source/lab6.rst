@@ -1,5 +1,5 @@
 ==========================================
-Lab 4: Openstack
+Lab 6: Openstack
 ==========================================
 
 This is the documentation for the CNIT 48101 Lab 6 "Openstack" Created by Jacob Bauer & Nick Kuenning
@@ -11,6 +11,7 @@ Section 1 (Setting up DevStack (OpenStack))
 To Set up DevStack, we first created a local.conf file in the devstack directory. This file contained the configuration for the OpenStack installation. We then ran the `stack.sh` script to install OpenStack. After the installation was complete, we were able to access the OpenStack dashboard by navigating to the IP address of the DevStack machine in a web browser.
 
 This is the lcoal.conf file that we used that allowd us to install OpenStack.
+
 .. code-block::
 
     [[local|localrc]]
